@@ -10,7 +10,7 @@ const Header = () => {
         <span className="font-semibold text-[#403F3F]">
           {moment().format("dddd")},{" "}
         </span>
-        {moment().format("MMMM, Q YYYY")}
+        {moment().format("MMMM, DD YYYY")}
       </p>
     </div>
   );
