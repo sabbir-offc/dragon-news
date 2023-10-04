@@ -3,6 +3,8 @@ import Root from "../layouts/Root";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Register";
+import NewsDetails from "../Pages/NewsDetails/NewsDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
 const routes = createBrowserRouter([
   {
@@ -16,6 +18,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/news/:id",
+        element: (
+          <PrivateRoutes>
+            <NewsDetails></NewsDetails>,
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/login",

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 import { BiShowAlt, BiHide } from "react-icons/bi";
 import { useState } from "react";
@@ -8,6 +8,7 @@ const Login = () => {
   const [showPass, setShowPass] = useState(false);
 
   const { loggedUser } = useAuth();
+  const location = useLocation();
 
   const navigate = useNavigate();
 
@@ -19,7 +20,7 @@ const Login = () => {
     loggedUser(email, password)
       .then(() => {
         toast.success("Login Successfull.");
-        navigate("/");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         console.log(err);
