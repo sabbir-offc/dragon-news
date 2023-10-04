@@ -1,6 +1,20 @@
 import { Link, NavLink } from "react-router-dom";
 import userDefaultImg from "/public/assets/user.png";
+import useAuth from "../../../hooks/useAuth";
+import toast from "react-hot-toast";
 const Navbar = () => {
+  const { logOut, user } = useAuth();
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast.success("Log out successfully.");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Logout failed.");
+      });
+  };
   const navLinks = (
     <>
       <li>
@@ -50,7 +64,11 @@ const Navbar = () => {
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img src={userDefaultImg} />
+              {user?.email ? (
+                <img src={user.photoURL} />
+              ) : (
+                <img src={userDefaultImg} alt="" />
+              )}
             </div>
           </label>
           {/* <ul
@@ -72,9 +90,18 @@ const Navbar = () => {
           </ul> */}
         </div>
         <Link to="/login">
-          <button className="ml-2 px-11 py-3 bg-[#403F3F] text-white">
-            Login
-          </button>
+          {user?.email ? (
+            <button
+              onClick={handleLogOut}
+              className="ml-2 px-11 py-3 bg-[#3648e6] text-white"
+            >
+              Log Out
+            </button>
+          ) : (
+            <button className="ml-2 px-11 py-3 bg-[#403F3F] text-white">
+              Log In
+            </button>
+          )}
         </Link>
       </div>
     </div>

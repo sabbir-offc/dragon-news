@@ -21,8 +21,8 @@ const Home = () => {
           <h2 className="text-xl font-semibold text-[#403F3F]">
             Dragon News Home
           </h2>
-          {newses.map((news) => (
-            <News key={news.id} news={news}></News>
+          {newses.map((news, idx) => (
+            <News key={idx} news={news}></News>
           ))}
         </div>
         <div className="border">

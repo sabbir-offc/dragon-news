@@ -35,7 +35,7 @@ const LeftSideNav = () => {
       </div>
 
       {newses.slice(0, 3).map((news) => (
-        <div className="space-y-5 my-4" key={news.id}>
+        <div className="space-y-5 my-4" key={news._id}>
           <img
             src={news.image_url}
             alt={`image of ${news.id}`}

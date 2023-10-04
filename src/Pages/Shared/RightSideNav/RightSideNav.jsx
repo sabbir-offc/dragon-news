@@ -11,10 +11,10 @@ const RightSideNav = () => {
     <div>
       <div className="p-4 space-y-4 mb-8">
         <h2 className="text-xl font-semibold">Login With</h2>
-        <button className="btn btn-outline w-full">
+        <button className="btn btn-outline w-full capitalize">
           <FaGoogle className="text-lg"></FaGoogle> Login With Google
         </button>
-        <button className="btn btn-outline w-full">
+        <button className="btn btn-outline w-full capitalize">
           <FaGithub className="text-lg"></FaGithub> Login With Github
         </button>
       </div>
