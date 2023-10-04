@@ -15,6 +15,9 @@ const routes = createBrowserRouter([
         loader: () => fetch("/data/news.json"),
       },
       {
+        path: "/news/:id",
+      },
+      {
         path: "/login",
         element: <Login></Login>,
       },

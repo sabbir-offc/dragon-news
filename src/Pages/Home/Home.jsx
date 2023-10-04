@@ -14,18 +14,18 @@ const Home = () => {
       <BreakingNews></BreakingNews>
       <Navbar></Navbar>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div className="border">
+        <div className="sticky -top-2">
           <LeftSideNav></LeftSideNav>
         </div>
-        <div className="md:col-span-2 border p-4">
+        <div className="md:col-span-2 p-4">
           <h2 className="text-xl font-semibold text-[#403F3F]">
             Dragon News Home
           </h2>
-          {newses.map((news, idx) => (
-            <News key={idx} news={news}></News>
+          {newses.map((news) => (
+            <News key={news._id} news={news}></News>
           ))}
         </div>
-        <div className="border">
+        <div className="sticky -top-2">
           <RightSideNav></RightSideNav>
         </div>
       </div>
