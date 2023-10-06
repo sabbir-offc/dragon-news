@@ -5,11 +5,10 @@ import { BsBookmark, BsShare } from "react-icons/bs";
 import { Link } from "react-router-dom";
 const News = ({ news }) => {
   const { title, details, author, image_url, _id } = news;
-  const [isCopied, setIsCopied] = useState(false);
+
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text).then(() => {
-      setIsCopied(true);
-      isCopied && toast.success("Link copied to your clipboard");
+      toast.success("Link copied to your clipboard");
     });
   };
   return (

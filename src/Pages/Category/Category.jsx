@@ -21,7 +21,7 @@ const Category = () => {
         <div>
           <LeftSideNav></LeftSideNav>
         </div>
-        <div className="col-span-2">
+        <div className="col-span-2 px-4 md:px-3">
           {news.length > 1 ? (
             news.map((item) => (
               <div key={item._id} className="my-8 border rounded-lg">

@@ -17,7 +17,7 @@ const Home = () => {
         <div className="">
           <LeftSideNav></LeftSideNav>
         </div>
-        <div className="md:col-span-2 p-4">
+        <div className="md:col-span-2 p-4 md:p-4">
           <h2 className="text-xl font-semibold text-[#403F3F]">
             Dragon News Home
           </h2>
