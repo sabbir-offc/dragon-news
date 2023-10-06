@@ -1,14 +1,15 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import userDefaultImg from "/public/assets/user.png";
 import useAuth from "../../../hooks/useAuth";
 import toast from "react-hot-toast";
 const Navbar = () => {
   const { logOut, user } = useAuth();
-
+  const navigate = useNavigate();
   const handleLogOut = () => {
     logOut()
       .then(() => {
         toast.success("Log out successfully.");
+        navigate("/");
       })
       .catch(() => {
         toast.error("Logout failed.");
@@ -63,7 +64,7 @@ const Navbar = () => {
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              {user?.email ? (
+              {user ? (
                 <img src={user.photoURL} />
               ) : (
                 <img src={userDefaultImg} alt="" />
@@ -89,7 +90,7 @@ const Navbar = () => {
           </ul> */}
         </div>
         <Link to="/login">
-          {user?.email ? (
+          {user ? (
             <button
               onClick={handleLogOut}
               className="ml-2 px-11 py-3 bg-[#3648e6] text-white"

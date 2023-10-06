@@ -13,8 +13,8 @@ const Home = () => {
       <Header></Header>
       <BreakingNews></BreakingNews>
       <Navbar></Navbar>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div className="sticky -top-2">
+      <div className=" grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="">
           <LeftSideNav></LeftSideNav>
         </div>
         <div className="md:col-span-2 p-4">
@@ -25,7 +25,7 @@ const Home = () => {
             <News key={news._id} news={news}></News>
           ))}
         </div>
-        <div className="sticky -top-2">
+        <div>
           <RightSideNav></RightSideNav>
         </div>
       </div>
