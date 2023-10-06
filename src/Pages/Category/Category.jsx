@@ -3,13 +3,16 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 import { BsBookmark, BsShare } from "react-icons/bs";
 import LeftSideNav from "../Shared/LeftSideNav/LeftSideNav";
+import { useEffect } from "react";
 
 const Category = () => {
   const { id } = useParams();
   const newses = useLoaderData();
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
 
   const news = newses && newses.filter((news) => news.category_id === id);
-  // const { author, image_url, _id, details, title } = news;
 
   return (
     <div>
@@ -19,7 +22,7 @@ const Category = () => {
           <LeftSideNav></LeftSideNav>
         </div>
         <div className="col-span-2">
-          {news &&
+          {news.length > 1 ? (
             news.map((item) => (
               <div key={item._id} className="my-8 border rounded-lg">
                 <div className="bg-[#F3F3F3] p-5 rounded-t-lg flex gap-4">
@@ -77,7 +80,14 @@ const Category = () => {
                   )}
                 </div>
               </div>
-            ))}
+            ))
+          ) : (
+            <div className=" flex mt-10 items-center justify-center">
+              <h1 className="text-xl md:text-3xl text-center">
+                No News found in this category
+              </h1>
+            </div>
+          )}
         </div>
       </div>
     </div>

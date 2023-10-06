@@ -31,10 +31,10 @@ const LeftSideNav = () => {
             to={`/category/${category.id}`}
             className={({ isActive, isPending }) =>
               isPending
-                ? "block text-lg p-3 text-[#9F9F9F]"
+                ? "block text-lg p-3 w-full text-[#9F9F9F]"
                 : isActive
                 ? " bg-gray-700 text-white py-2 px-1 w-full rounded"
-                : "block text-lg p-3 text-[#9F9F9F] my-3 hover:bg-gray-600 hover:text-white  hover:duration-1000"
+                : "block text-lg w-full p-3 text-[#9F9F9F] my-3 hover:bg-gray-600 hover:text-white  hover:duration-1000"
             }
           >
             {category.name}
