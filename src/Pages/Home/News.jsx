@@ -27,9 +27,8 @@ const News = ({ news }) => {
         <img src={image_url} alt="" />
         {details.length > 200 ? (
           <>
-            <p className="text-[#706F6F] mt-8">{details.slice(0, 200)}...</p>{" "}
+            <p className="text-[#706F6F] mt-8">{details.slice(0, 200)}...</p>
             <Link to={`/news/${_id}`} className="text-[#F75B5F] font-semibold">
-              {" "}
               Read More
             </Link>
           </>
