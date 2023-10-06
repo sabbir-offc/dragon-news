@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+
 import toast from "react-hot-toast";
 import { BsBookmark, BsShare } from "react-icons/bs";
 import { Link } from "react-router-dom";

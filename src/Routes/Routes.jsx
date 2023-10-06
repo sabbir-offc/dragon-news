@@ -6,11 +6,13 @@ import Register from "../Pages/Auth/Register";
 import NewsDetails from "../Pages/NewsDetails/NewsDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import Category from "../Pages/Category/Category";
+import Error from "../Pages/Error/Error";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",

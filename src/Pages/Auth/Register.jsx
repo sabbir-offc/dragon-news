@@ -5,6 +5,7 @@ import { BiShowAlt, BiHide } from "react-icons/bi";
 import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
@@ -47,6 +48,9 @@ const Register = () => {
   };
   return (
     <div className="text-center">
+      <Helmet>
+        <title>Register | Dragon News</title>
+      </Helmet>
       <Navbar></Navbar>
       <div className="bg-white p-14 space-y-12 shadow max-w-2xl mx-auto">
         <h1 className="text-2xl md:text-4xl text-[#403F3F] font-semibold">

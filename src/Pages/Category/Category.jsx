@@ -4,6 +4,7 @@ import Navbar from "../Shared/Navbar/Navbar";
 import { BsBookmark, BsShare } from "react-icons/bs";
 import LeftSideNav from "../Shared/LeftSideNav/LeftSideNav";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 const Category = () => {
   const { id } = useParams();
@@ -16,6 +17,9 @@ const Category = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Category | Dragon News</title>
+      </Helmet>
       <Navbar></Navbar>
       <div className="grid grid-cols-1 md:grid-cols-3">
         <div>

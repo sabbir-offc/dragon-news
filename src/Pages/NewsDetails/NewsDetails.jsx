@@ -4,6 +4,7 @@ import RightSideNav from "../Shared/RightSideNav/RightSideNav";
 import Navbar from "../Shared/Navbar/Navbar";
 import { useEffect } from "react";
 import { BsArrowLeft } from "react-icons/bs";
+import { Helmet } from "react-helmet";
 
 const NewsDetails = () => {
   const { id } = useParams();
@@ -15,6 +16,9 @@ const NewsDetails = () => {
   const { image_url, title, details, category_id } = news;
   return (
     <div>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
       <Header></Header>
       <Navbar></Navbar>
       <div className="grid grid-cols-1 md:grid-cols-4">

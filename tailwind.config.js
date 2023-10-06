@@ -6,9 +6,13 @@ export default {
   ],
   theme: {
     extend: {
+
       fontFamily: {
         poppins: "'Poppins', sans- serif",
-      }
+      },
+      spacing: {
+        'decrease': 'calc(100vh - 180px)',
+      },
     },
   },
   plugins: [require("daisyui")],
